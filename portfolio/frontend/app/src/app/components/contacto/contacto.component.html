@@ -1,0 +1,53 @@
+<main>
+    <section class="section-attributes">
+        <article class="container-attribute">
+            <img src="../../../assets/phone-rounded-svgrepo-com.svg" alt="">
+            <div class="text-attribute">
+                <h2>Teléfono</h2>
+                <p>+34 644275671</p>
+            </div>
+        </article>
+        <article class="container-attribute">
+            <img src="../../../assets/email-1572-svgrepo-com.svg" alt="">
+            <div class="text-attribute">
+                <h2>Email</h2>
+                <p>josefbuenoluis&#64;gmail.com</p>
+            </div>
+        </article>
+        <article class="container-attribute">
+            <img src="../../../assets/time-svgrepo-com.svg" alt="">
+            <div class="text-attribute">
+                <h2>Horario</h2>
+                <p>9:00 - 18:00</p>
+            </div>
+        </article>
+    </section>
+    <section class="section-form">
+        <article class="contact-form">
+            <div class="child-form">
+                <div class="child-content">
+                    <h2>¿Tienes en mente algún proyecto?</h2>
+                    <p class="text-content">Transformo tus ideas en realidad. Con experiencia y pasión, te ofrezco soluciones personalizadas para que tu proyecto sea un éxito. ¡Contáctame y empecemos a construir juntos!</p>
+                    <hr />
+                    <div class="child-image">
+                        <img src="../../../assets/bg_project.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="child-form">
+                <div class="child-content">
+                    <form action="/api/contacto" method="post" #formularioContacto>
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre completo..." required>
+                        <span id="msj-nombre" style="display: none; font-weight: 700;">El nombre no puede estar vacío.</span>
+                        <input type="email" id="email" name="email" placeholder="Correo electrónico..." required>
+                        <span id="msj-email" style="display: none; font-weight: 700;">Debe ingresar un correo electrónico válido.</span>
+                        <textarea name="mensaje" id="mensaje" 
+                        placeholder="Escriba su mensaje..." required></textarea>
+                        <span id="msj-mensaje" style="display: none; font-weight: 700;">El mensaje no puede estar vacío.</span>
+                        <input type="submit" (click)="postFormulario($event)" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>

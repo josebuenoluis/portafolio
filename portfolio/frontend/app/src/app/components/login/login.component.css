@@ -1,0 +1,91 @@
+main{
+    font-family: "Lato";
+}
+
+.title{
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+.stroke{
+    width: 60%;
+    margin: auto;
+    font-size: 24px;
+}
+
+.stroke hr{
+    border:2px solid white;
+}
+
+.formulario{
+    background-color: white;
+    border-radius: 20px;
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+    font-weight: bold;
+}
+
+.formulario form{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.formulario .form-input{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.formulario .form-input label{
+    text-align: start;
+    padding-bottom: 5px;
+}
+
+.formulario .form-input input{
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 18px;
+    padding: 10px;    
+}
+
+.formulario .form-input input[type="submit"]{
+    background-color: #1b1bb9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 1rem;
+}
+
+.formulario .form-input input[type="submit"]:hover{
+    background-color: #15156d;
+}
+
+.formulario .form-input input[type="submit"]:active{
+    background-color: #2d178f;
+}
+
+.formulario .form-icon {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.formulario .form-icon img{
+    width: 100%;
+}
+
+@media screen and (max-width:720px) {
+    .formulario{
+        width: 70%;
+    }
+}

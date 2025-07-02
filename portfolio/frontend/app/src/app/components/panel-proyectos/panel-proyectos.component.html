@@ -1,0 +1,59 @@
+<main>
+    <section class="title">
+        <h1>Crear proyecto</h1>
+    </section>
+    <section class="stroke">
+        <hr />
+    </section>
+    <section class="formulario">
+       <form action="https://josebuenoluis.com/api/proyectos/" enctype="multipart/form-data" method="post" #formulario>
+            <div class="form-input">
+                <label for="titulo">Título</label>
+                <input type="text" placeholder="Ingrese título" name="titulo" id="titulo">
+            </div>
+            <div class="form-input">
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" id="descripcion" placeholder="Ingrese descripción..." rows="5"></textarea>
+            </div>
+            <div class="form-input">
+                <label for="imagen">Imagen</label>
+                <input type="file" (change)="onFileSelected($event)" name="imagen" id="imagen">
+                <img src="../../../assets/img-icon.svg" alt="Imagen seleccionada" id="imagen-preview">
+            </div>
+            <div class="form-input">
+                <label for="url">URL</label>
+                <input type="text" name="url" id="url" placeholder="Ingrese URL del proyecto">
+            </div>
+            <div class="form-input">
+                <label for="tecnologias">Tecnologías</label>
+                <div class="input-group">
+                    <input type="text" id="tecnologias" placeholder="Añadir tecnología">
+                    <button type="button" id="agregar-tecnologia">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="green" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="container-tecnologias">
+                    <ul id="lista-tecnologias">
+                        <li>
+                            <div class="item-tecnologia">
+                                <span class="item-text">Tecnologia 1</span>
+                                <input type="checkbox" name="tecnologia-seleccionada" value="Tecnologia 1" />
+                            </div>
+                            <div class="item-tecnologia">
+                                <span class="item-text">Tecnologia 2</span>
+                                <input type="checkbox" name="tecnologia-seleccionada" value="Tecnologia 2" />
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="form-input">
+                <input type="submit" value="Crear" (click)="postFormulario($event)">
+            </div>
+       </form>
+    </section>
+</main>

@@ -1,0 +1,74 @@
+section article{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #6275a8;
+    width: 50%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 10px 10px 10px #677db799;
+    border: 3px solid rgba(255, 255, 255, .6);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+section article img{
+    width: 60%;
+    height: 15rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+section article span{
+    font-size: 24px;
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 600;
+    margin-bottom: 2rem;
+    width: 80%;
+    text-align: center;
+}
+
+section article a{
+    background-color:#3C62C4;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 1rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    border: 3px solid rgb(255, 255, 255,.80);
+}
+
+section article a:hover{
+    opacity: .7;
+    cursor: pointer;
+}
+
+section article a:active{
+    opacity: .7;
+    cursor: pointer;
+    background-color: blue;
+}
+
+
+@media screen and (max-width:700px) {
+    section article{
+        width: 90%;
+    }
+    section article span{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    section article{
+        width: 90%;
+    }
+    section article span{
+        width: 100%;
+    }
+}

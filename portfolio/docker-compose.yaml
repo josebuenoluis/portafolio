@@ -1,0 +1,76 @@
+
+services:
+  web:
+    image: josebueno2504/ubuntu-asistencias:app
+    container_name: ubuntu-flask
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - "5000:5000"
+    networks:
+      - portfolio-net
+  proxy:
+    container_name: proxy
+    image: josebueno2504/portfolio:proxy
+    ports:
+      - "443:443"
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /etc/letsencrypt/live/josebuenoluis.com:/etc/letsencrypt/live/josebuenoluis.com:ro
+      - /etc/letsencrypt/archive/josebuenoluis.com:/etc/letsencrypt/archive/josebuenoluis.com:ro
+      - media-data:/usr/share/nginx/media
+      - static-data:/usr/share/nginx/html/static
+      
+    networks:
+      - portfolio-net
+    depends_on:
+      - backend
+      - frontend
+
+  frontend:
+    container_name: portfolio
+    image: josebueno2504/portfolio:frontend
+    networks:
+      - portfolio-net
+
+  backend:
+    container_name: backend
+    image: josebueno2504/portfolio:backend
+    networks:
+      - portfolio-net
+    volumes:
+      - media-data:/app/media
+      - static-data:/app/staticfiles
+
+    depends_on:
+      - db
+    command: >
+      sh -c "python manage.py makemigrations &&
+              python manage.py migrate &&
+              python create_superuser.py &&
+              python manage.py collectstatic --noinput &&
+              gunicorn backend.wsgi:application --bind 0.0.0.0:8000"
+
+  db:
+    container_name: db
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: jose
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: jose
+      MYSQL_PASSWORD: jose
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - portfolio-net
+
+networks:
+  portfolio-net:
+    driver: bridge
+
+volumes:
+  db-data:
+  media-data:
+  static-data:
