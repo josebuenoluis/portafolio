@@ -11,10 +11,11 @@ import { LoginComponent } from './components/login/login.component';
 import { permissionsGuard } from './guards/permissions.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { MensajeComponent } from './components/mensaje/mensaje.component';
+import { ProximamenteComponent } from './components/proximamente/proximamente.component';
 export const routes: Routes = [
     {path:"",component:HomeComponent},
     {path:"proyectos",component:ProjectsComponent},
-    {path:"blog",component:BlogComponent},
+    {path:"blog",component:ProximamenteComponent},
     {path:"contact",component:ContactoComponent},
     {path:"proyectos/to-do-app",component:ToDoAppComponent},
     {path:"proyectos/panel",component:PanelProyectosComponent,canActivate : [permissionsGuard]},

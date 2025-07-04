@@ -1,12 +1,13 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
 
 def enviarCorreo(asunto_nombre:str,mensaje_correo:str,correo_contacto:str):
 
-    correo_origen = '' # Tu correo electrónico de origen
-    contraseña = '' # Tu contraseña de correo electrónico de origen
-    correo_destino = '' # Correo electrónico de destino
+    correo_origen = os.environ.get('CORREO_ORIGEN')
+    contraseña = os.environ.get('CORREO_CONTRASENA')
+    correo_destino = os.environ.get('CORREO_DESTINO')
 
     mensaje = MIMEMultipart()
     mensaje['From'] = correo_origen

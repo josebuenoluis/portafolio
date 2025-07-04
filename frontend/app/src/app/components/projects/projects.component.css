@@ -37,7 +37,7 @@
 
 .projects-section .project-box{
     width: 25%;
-    height: 100%;
+    /* height: 100%; */
     background-color: #6275A8;
     border:3px solid rgb(255, 255, 255,.60);
     border-radius: 20px;
@@ -56,10 +56,17 @@
 
 
 
-.projects-section .project-box .text-info{
+/* .projects-section .project-box .text-info{
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
+} */
+.projects-section .project-box .text-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2rem;
+  height: 100%;
 }
 .projects-section .project-box .text-info h3{
     margin: 0 12px;
@@ -91,7 +98,7 @@
 }
 
 .projects-section .project-box .img-project{
-    height: 40%;
+    height: 12rem;
     background-color: white;
     object-fit: cover;
     border-radius: 17px 17px 0px 0px;
@@ -100,9 +107,9 @@
 
 .projects-section .project-box .img-project img{
     width: 100%;
-    height: 12rem;
-    margin: 0;
+    height: 100%;
     padding: 0;
+    margin: 0;
     border-radius: 20px 20px 0px 0px;
     object-fit: contain;
 }
@@ -110,9 +117,11 @@
 .projects-section .project-box .tecnologies-box{
     display: flex;
     margin-left: 12px;
+    flex-wrap: wrap;
 }
 .projects-section .project-box .tecnologies-box .tecnologie-content{
     margin-right: 0.5rem;
+    margin-top: 0.2rem;
     background-color: #4E649E;
     border-radius: 20px;
     padding: 5px;

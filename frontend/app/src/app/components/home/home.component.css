@@ -281,6 +281,57 @@
     position: relative;
 }
 
+main section.section-descarga article .btn-descargar{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: center;
+    background-color: #2b458d;
+    width: fit-content;
+    border-radius: 10px;
+    border:3px solid white;
+    margin: 2rem auto;
+    padding-left: 1rem;
+}
+main section.section-descarga article .btn-descargar span{
+    color: white;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+main section.section-descarga article .btn-descargar button{
+    background: none;
+    border-radius: 0 7px 7px 0;
+    border: 1px solid white;
+    color: white;
+}
+main section.section-descarga article .btn-descargar img{
+    width: 40px;
+    height: 40px;
+}
+main section.section-descarga article .btn-descargar:hover{
+    background-color: #032ead;
+    cursor: pointer;
+    opacity: .9;
+    transition: background-color 0.3s ease;
+    }
+
+main section.section-descarga article .btn-descargar:hover button {
+    background-color: #090844;
+    color: white;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+main section.section-descarga article .btn-descargar:active{
+    scale: 0.95;
+    }
+
+main section.section-descarga article .btn-descargar:active button {
+    scale: 0.95;
+}
+
 @keyframes slideInForward2 {
     0% {
         top: -23px;

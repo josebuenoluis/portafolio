@@ -8,6 +8,12 @@ services:
     restart: always
     ports:
       - "5000:5000"
+    environment:
+      PUSHOVER_USER_KEY: ""
+      PUSHOVER_API_KEY: ""
+      PUSHOVER_URL: ""
+      SMTP_USER: ""
+      SMTP_PASS: ""
     networks:
       - portfolio-net
   proxy:
@@ -41,9 +47,12 @@ services:
     networks:
       - portfolio-net
     volumes:
-      - media-data:/app/media
+      - media-data:/app/img
       - static-data:/app/staticfiles
-
+    environment:
+      CORREO_ORIGEN: ""
+      CORREO_CONTRASENA: ""
+      CORREO_DESTINO: ""
     depends_on:
       - db
     command: >

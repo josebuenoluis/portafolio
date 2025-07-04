@@ -24,6 +24,20 @@
                 <a href="/proyectos/to-do-app">Ver proyecto</a>
             </div>
         </article>
-        
+        <article class="project-box" *ngFor="let proyecto of proyectos">
+            <div class="img-project">
+            <img [src]="proyecto.image" [alt]="'Imagen del proyecto ' + proyecto.title" />
+            </div>
+            <div class="text-info">
+            <h3>{{ proyecto.title }}</h3>
+            <p>{{ proyecto.description }}</p>
+            <div class="tecnologies-box">
+                <div class="tecnologie-content" *ngFor="let id of proyecto.tecnologias_fk">
+                    <p>{{ obtenerNombreTecnologia(id) }}</p>
+                </div>
+            </div>
+            <a [href]="proyecto.url" target="_blank">Ver Proyecto</a>
+            </div>
+        </article>
     </section>
 </main>
